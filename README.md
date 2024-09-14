@@ -1,0 +1,2 @@
+# KinetiC
+Simulace reakční kinetiky
