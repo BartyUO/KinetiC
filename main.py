@@ -312,7 +312,7 @@ def main():
                         reactants = {substances[name]: coeff for name, coeff in info['reactants'].items()}
                         products = {substances[name]: coeff for name, coeff in info['products'].items()}
                         catalyst = substances[info['catalyst']]
-                        k = float(info['entry_k'].get())
+                        k = float(info['entry_k'].get())        
                         reaction = CatalyticReaction(reactants, products, catalyst, k)
                     elif reaction_type == 'Autocatalytic':
                         reactants = {substances[name]: coeff for name, coeff in info['reactants'].items()}
@@ -328,6 +328,7 @@ def main():
                     elif reaction_type == 'MichaelisMenten':
                         substrate = substances[info['substrate']]
                         product = substances[info['product']]
+                        enzyme = substances[info['enzyme']] 
                         vmax = float(info['entry_vmax'].get())
                         km = float(info['entry_km'].get())
                         reaction = MichaelisMentenReaction(substrate, product, enzyme, vmax, km)
