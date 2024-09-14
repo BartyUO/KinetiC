@@ -330,7 +330,7 @@ def main():
                         product = substances[info['product']]
                         vmax = float(info['entry_vmax'].get())
                         km = float(info['entry_km'].get())
-                        reaction = MichaelisMentenReaction(substrate, product, vmax, km)
+                        reaction = MichaelisMentenReaction(substrate, product, enzyme, vmax, km)
                     elif reaction_type == 'Inhibitory':
                         reactants = {substances[name]: coeff for name, coeff in info['reactants'].items()}
                         products = {substances[name]: coeff for name, coeff in info['products'].items()}
